@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap");
+
+            :root {
+                --background-color: #1f1f1f;
+                --text-color: #efefef;
+                --brand-color: #3fbfbf;
+            }
+
+            * {
+                padding: 0;
+                margin: 0;
+                border: none;
+                user-select: none;
+            }
+
+            body {
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+                background-color: var(--background-color);
+            }
+
+            #bg {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                z-index: -1;
+                opacity: 0.25;
+                background-color: white;
+                mask-image: url("/assets/images/header/cloud1.png"), 
+                        url("/assets/images/header/cloud2.png"),
+                        url("/assets/images/header/cloud3.png");
+                mask-size: auto 50vh, auto 50vh, auto 50vh;
+                mask-repeat: repeat-x, repeat-x, repeat-x;
+                mask-position: bottom, bottom, bottom;
+                -webkit-mask-image: url("/assets/images/header/cloud1.png"), 
+                        url("/assets/images/header/cloud2.png"),
+                        url("/assets/images/header/cloud3.png");
+                -webkit-mask-size: auto 50vh, auto 50vh, auto 50vh;
+                -webkit-mask-repeat: repeat-x, repeat-x, repeat-x;
+                -webkit-mask-position: bottom, bottom, bottom;
+            }
+
+            #content {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                font-size: 10vmin;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: var(--text-color);
+                font-family: "Source Sans 3", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                text-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.5);
+            }
+
+            a {
+                color: var(--brand-color);
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="content">
+            {{ content }}
+        </div>
+    </body>
+</html>
